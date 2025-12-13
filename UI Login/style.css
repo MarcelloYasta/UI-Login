@@ -1,0 +1,236 @@
+/* -- Variabel Warna untuk Elegance & Dark Slate -- */
+:root {
+    --primary-color: #d4af37; /* Aksen Kuning Emas/Brass yang Elegan */
+    --primary-dark: #b8860b;  /* Emas Gelap untuk Hover */
+    --bg-color: #1a1a2e;      /* Biru Abu-abu Gelap (Dark Slate) */
+    --card-bg: #272740;       /* Kartu yang Sedikit Lebih Terang dari BG */
+    --text-dark: #f0f8ff;     /* Teks Putih Kebiruan */
+    --text-light: #a9a9b7;    /* Teks Abu-abu Pudar */
+    --border-color: #44445c;  /* Garis Border yang Halus */
+    --input-bg: #33334d;      /* Latar Belakang Input */
+}
+
+/* -- Reset dan Base Styling -- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Efek Gradien Radial Halus untuk Kedalaman */
+    background-image: radial-gradient(circle at top left, #3a3a5c 0%, var(--bg-color) 70%);
+}
+
+/* -- Wrapper Utama -- */
+.login-wrapper {
+    width: 100%;
+    max-width: 450px; /* Sedikit lebih lebar untuk kesan elegan */
+    padding: 30px;
+}
+
+/* -- Logo dan Header (Minimalis) -- */
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    font-size: 2.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    /* Teks Emas dengan Bayangan Tipis */
+    color: var(--primary-color);
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.4); 
+}
+
+/* -- Kartu Login (Elegance) -- */
+.login-card {
+    background: var(--card-bg); 
+    padding: 45px 40px; 
+    border-radius: 12px; 
+    border: 1px solid var(--border-color);
+    /* Shadow yang lembut dan terangkat */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 10px rgba(255, 255, 255, 0.05); 
+    /* Animasi masuk halus */
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Judul "Selamat Datang Kembali" */
+.login-card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-align: center; /* Pastikan ini ada */
+    color: var(--text-dark); /* Pastikan warnanya sesuai */
+}
+
+/* Sub-judul "Masuk untuk mengakses..." */
+.subtitle {
+    color: var(--text-light);
+    margin-bottom: 35px;
+    font-size: 0.95rem;
+    text-align: center; /* Pastikan ini ada */
+}
+
+/* -- Input Form (Sharp & Clean) -- */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-light);
+}
+
+.login-form input {
+    width: 100%;
+    padding: 15px; 
+    border: 1px solid var(--border-color);
+    border-radius: 8px; 
+    font-size: 1rem;
+    background-color: var(--input-bg);
+    color: var(--text-dark);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Efek Fokus Garis Emas Halus */
+.login-form input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 1px var(--primary-color), 0 0 8px rgba(212, 175, 55, 0.3); /* Ring halus */
+}
+
+/* Container untuk baris opsi bantuan */
+.help-options {
+    display: flex;
+    justify-content: space-between; /* Jarak kiri-kanan */
+    align-items: center; /* Sejajarkan vertikal tengah */
+    font-size: 13px; /* Ukuran font standar Netflix */
+    color: #b3b3b3; /* Warna abu-abu terang */
+    margin-top: 10px;
+}
+
+/* Bagian pembungkus checkbox dan label */
+.remember-me {
+    display: flex;
+    align-items: center; /* KUNCI: Menyejajarkan checkbox & teks */
+    cursor: pointer;
+}
+
+/* Styling khusus untuk Checkbox */
+.remember-me input[type="checkbox"] {
+    appearance: none; /* Hilangkan style bawaan browser */
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #737373; /* Warna kotak abu-abu */
+    border-radius: 2px;
+    margin-right: 5px; /* Jarak antara kotak dan teks */
+    position: relative;
+    cursor: pointer;
+    border: none;
+}
+
+/* Style saat checkbox dicentang */
+.remember-me input[type="checkbox"]:checked {
+    background-color: #e50914; /* Merah Netflix saat aktif (opsional) atau biarkan putih/abu */
+    /* Atau gunakan warna putih seperti aslinya: background-color: #fff; */
+}
+
+/* Membuat tanda centang (checkmark) manual dengan CSS */
+.remember-me input[type="checkbox"]:checked::after {
+    content: '✔'; /* Karakter centang */
+    font-size: 12px;
+    color: white; /* Warna centang */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Posisi tepat di tengah */
+}
+
+/* Styling Label Teks */
+.remember-me label {
+    cursor: pointer; /* Ubah kursor jadi jari saat di-hover */
+    user-select: none; /* Mencegah teks terblokir saat diklik cepat */
+    color: #b3b3b3;
+}
+
+/* Styling Link "Butuh Bantuan?" */
+.help-link {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
+
+/* -- Tombol Masuk (Bold & Berkelas) -- */
+.sign-in-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--bg-color); /* Teks warna gelap untuk kontras maksimal */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+    /* Tambah Shadow Emas Halus pada Tombol */
+    box-shadow: 0 8px 15px rgba(212, 175, 55, 0.4); 
+}
+
+.sign-in-btn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.6); 
+}
+
+/* -- Link Daftar -- */
+.signup-link {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 0.95rem;
+    color: var(--text-light);
+}
+
+.signup-link a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* -- Responsiveness -- */
+@media (max-width: 500px) {
+    .login-wrapper {
+        padding: 0;
+    }
+    .login-card {
+        padding: 30px 25px;
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+        min-height: 100vh;
+        background: var(--bg-color); 
+    }
+}
